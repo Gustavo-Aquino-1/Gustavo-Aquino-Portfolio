@@ -17,8 +17,6 @@ const FooterArea = styled.footer`
   }
 
   @media (max-width: 600px) {
-    margin-top: 20px;
-
     a {
       font-size: 30px;
     }
