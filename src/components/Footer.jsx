@@ -5,6 +5,7 @@ import { VscGithubInverted } from 'react-icons/vsc'
 import styled from 'styled-components'
 
 const FooterArea = styled.footer`
+  margin-top: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,6 +18,7 @@ const FooterArea = styled.footer`
   }
 
   @media (max-width: 600px) {
+    margin-top: 0;
     a {
       font-size: 30px;
     }
