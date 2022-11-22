@@ -9,7 +9,6 @@ const FooterArea = styled.footer`
   align-items: center;
   justify-content: center;
   gap: 30px;
-  margin-top: 40px;
 
   a {
     font-size: 38px;
