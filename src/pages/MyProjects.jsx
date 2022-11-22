@@ -4,14 +4,13 @@ import myprojects from '../data/MyProjectsData'
 import styled from 'styled-components'
 
 const MyProjectsContainer = styled.div`
-  height: 100vh;
   background-color: #1b5480;
 `;
 
 const MyProjectsArea = styled.div`
   width: 80%;
   margin: auto;
-  margin-top: 60px;
+  margin-top: 100px;
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
   gap: 1.5em;
@@ -27,8 +26,24 @@ const MyProjectsArea = styled.div`
       }
     }
     img {
+      border: 2px solid white;
       width: 350px;
       border-radius: 10px;
+      box-shadow: 1px 1px 5px 1px  white;
+    }
+  }
+
+  @media (max-width: 600px) {
+    display: block;
+    width: 90%;
+    gap: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+
+    div {
+      img {
+        width: 300px;
+      }
     }
   }
 `
@@ -46,7 +61,7 @@ function MyProjects() {
             >
               <img src={e.img} alt={e.title} />
               <p>
-                <a href={e.link}>{e.title}</a>
+                <a rel="noopener noreferrer" target="_blank" href={e.link}>{e.title}</a>
               </p>
             </div>
           ))

@@ -7,9 +7,8 @@ import { GiCommercialAirplane } from 'react-icons/gi'
 
 const AboutMeArea = styled.div`
   width: 100%;
-  background-color: #175572;
+  background-color: #1b5480;
   box-sizing: border-box;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,7 +21,7 @@ const AboutMeArea = styled.div`
 
   h1 {
     margin-top: 5em;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,7 +30,7 @@ const AboutMeArea = styled.div`
   }
 
   #informacoes {
-    height: 36em;
+    height: 30em;
     width: 40%;
     border-radius: 1em;
     padding: 20px;
@@ -50,6 +49,19 @@ const AboutMeArea = styled.div`
         gap: 20px;
       }
     }
+  }
+
+  @media (max-width: 750px) {
+    #informacoes {
+      width: 80%;
+    }
+
+    h1 {
+      font-size: 25px;
+      margin-top: 4em;
+      width: 80%;
+    }
+    padding-bottom: 100px;
   }
 `
 

@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import my_pic from '../imgs/my_pic.png'
 
 const HomeArea = styled.div`
-  background-color: #095274;
+  background-color: #1b5480;
   height: 100vh;
 
   main {
@@ -13,8 +13,10 @@ const HomeArea = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 70%;
+    margin: auto;
     gap: 70px;
+    padding: 0 20px;
   }
 
   img {
@@ -22,12 +24,33 @@ const HomeArea = styled.div`
     border-radius: 50%;
   }
 
-  #my_picture {
-  }
-
   #my_infos {
     color: white;
+  }
 
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 25px;
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+
+    img {
+      width: 160px;
+    }
+
+    main {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    margin: auto;
+    gap: 20px;
+    padding: 0 20px;
+  }
   }
 `
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { BsLinkedin } from 'react-icons/bs'
 import { VscGithubInverted } from 'react-icons/vsc'
-import { SiGmail } from 'react-icons/si'
+// import { SiGmail } from 'react-icons/si'
 import styled from 'styled-components'
 
 const FooterArea = styled.footer`
@@ -16,14 +16,21 @@ const FooterArea = styled.footer`
     color: white;
 
   }
+
+  @media (max-width: 600px) {
+    margin-top: 20px;
+
+    a {
+      font-size: 30px;
+    }
+  }
 `;
 
 function Footer() {
   return (
     <FooterArea>
-      <a href="https://google.com"><BsLinkedin /></a>
-      <a href="https://google.com"><VscGithubInverted /></a>
-      <a href="https://google.com"><SiGmail /></a>
+      <a href="https://www.linkedin.com/in/gustavo-henrique-aquino/"><BsLinkedin /></a>
+      <a href="https://github.com/Gustavo-Aquino-1"><VscGithubInverted /></a>
     </FooterArea>
   )
 }
