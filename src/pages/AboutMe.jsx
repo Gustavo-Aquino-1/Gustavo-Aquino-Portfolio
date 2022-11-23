@@ -43,6 +43,9 @@ const AboutMeArea = styled.div`
 
     details {
       cursor: pointer;
+      li {
+        margin-left: 10px;
+      }
       p {
         display: flex;
         align-items: center;
@@ -86,9 +89,11 @@ function AboutMe() {
 
           <details>
             <summary> Meus Hobbies</summary>
-            <p> - Ouvir musicas <span><ImHeadphones /></span></p>
-            <p> - Viajar<span><GiCommercialAirplane /></span></p>
-            <p> - Jogar videogame <span><BsController /></span></p>
+             <ul>
+              <li><p>Ouvir musicas <span><ImHeadphones /></span></p></li>
+              <li><p>Viajar<span><GiCommercialAirplane /></span></p></li>
+              <li><p>Jogar videogame <span><BsController /></span></p></li>
+             </ul>   
           </details>
         </div>
 
