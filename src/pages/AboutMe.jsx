@@ -4,17 +4,21 @@ import styled from 'styled-components';
 import { BsFillInfoCircleFill, BsController } from 'react-icons/bs';
 import { ImHeadphones } from 'react-icons/im'
 import { GiCommercialAirplane } from 'react-icons/gi'
+import { useContext } from 'react';
+import PortfolioContext from '../context/PortfolioContext';
+
 
 const AboutMeArea = styled.div`
+  //height: 100vh; */ // tava fincando branco quando estendia o details pois ela so suportava 100vh e o details extendia a pagina para uns 105vh logo ficava branco, é melhor deixar a height no automatico mesmo!!
+  height: 100vh; */ // em vez de 100vh coloque 100% !!
   width: 100%;
-  background-color: #1b5480;
-  box-sizing: border-box;
+  background-color: ${({ colors }) => colors.color}; // simples , quando for chamalo voce passa a props e aqui voce pega como nome que salvou
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 
-  header {
+   header {
     position: fixed;
     top: 0;
   }
@@ -26,15 +30,15 @@ const AboutMeArea = styled.div`
     align-items: center;
     justify-content: center;
     gap: 20px;
-    color: white;
+    color: ${({ colors }) => colors.subColor};
   }
 
   #informacoes {
-    height: 30em;
+    height: 80%;
     width: 40%;
     border-radius: 1em;
     padding: 20px;
-    color: #bbc2c5;
+    color: ${({ colors }) => colors.subColor};
     line-height: 30px;
     font-size: 21px;
     text-align: left;
@@ -52,9 +56,10 @@ const AboutMeArea = styled.div`
         gap: 20px;
       }
     }
-  }
+  } 
 
-  @media (max-width: 750px) {
+  @media (max-width: 600px) {
+    height: 100%;
     #informacoes {
       width: 80%;
     }
@@ -70,13 +75,14 @@ const AboutMeArea = styled.div`
 
 
 function AboutMe() {
+  const { color, subColor } = useContext(PortfolioContext);
   return (
     <>
-      <AboutMeArea>
-      <Header />
+      <AboutMeArea colors={{color, subColor}}>
+        <Header />
           <h1>
             Minhas Informações
-            <span><BsFillInfoCircleFill /></span>
+            <span><BsFillInfoCircleFill style={{ marginTop: 10 }} color='gray' /></span>
           </h1>
 
         <div id='informacoes'>
@@ -86,7 +92,6 @@ function AboutMe() {
           </p>
 
           <p>Dentre as minhas habilidades estão: Javascript , HTML/CSS , React, TypeScript, Redux, Styled-components, RTL, Docker, MySql , entre outras tecnologias.</p>
-
           <details>
             <summary> Meus Hobbies</summary>
              <ul>
@@ -94,7 +99,7 @@ function AboutMe() {
               <li><p>Viajar<span><GiCommercialAirplane /></span></p></li>
               <li><p>Jogar videogame <span><BsController /></span></p></li>
              </ul>   
-          </details>
+          </details> 
         </div>
 
 

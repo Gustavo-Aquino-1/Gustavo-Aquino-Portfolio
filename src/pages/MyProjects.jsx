@@ -1,13 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Header from '../components/Header'
 import myprojects from '../data/MyProjectsData'
 import styled from 'styled-components'
+import PortfolioContext from '../context/PortfolioContext';
 
 const MyProjectsContainer = styled.div`
-  background-color: #1b5480;
+  height: 100vh;
+  background-color: ${({ color }) => color}; // desestruturando color direto do props
+  padding-bottom: 100px;
+   //height: 100vh; // nao coloque height 100vh deixe no automatico !!
+
+   @media (max-width: 600px) {
+    height: 100%;
+  }
 `;
 
 const MyProjectsArea = styled.div`
+  /* height: 100%; */
   width: 80%;
   margin: auto;
   margin-top: 100px;
@@ -17,25 +26,33 @@ const MyProjectsArea = styled.div`
 
   div {
     text-align: center;
+    padding: 10px;
     a {
       text-decoration: none;
-      color: white;
-      opacity: 0.8;
+      font-size: 19px;
+      color: ${({ color }) => color};
+      font-weight: 500;
       &:hover {
-        opacity: 1;
+        color: ${(props) => props.color === 'black' ? '#0a626f' : '#2caa7a'} // com o props
       }
     }
     img {
-      border: 2px solid white;
       width: 350px;
-      border-radius: 10px;
-      box-shadow: 1px 1px 5px 1px  white;
+      height: 219px;
+      border-radius: 7px;
+      box-shadow: 1px 1px 10px 1px  ${(props) => props.color === 'black' ? 'gray' : 'grey'};
+    }
+
+    #e3 {
+      background-color: #002c33;
+      height: 200px;
+      padding: 10px;
     }
   }
 
   @media (max-width: 600px) {
     display: block;
-    width: 90%;
+    width: 95%;
     gap: 50px;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
@@ -49,17 +66,18 @@ const MyProjectsArea = styled.div`
 `
 
 function MyProjects() {
+  const { color, subColor } = useContext(PortfolioContext);
   return (
-    <MyProjectsContainer>
+    <MyProjectsContainer color={color}>
       <Header />
 
-      <MyProjectsArea>
+      <MyProjectsArea color={subColor}>
         {
           myprojects.map((e) => (
             <div
               key={e.id}
             >
-              <img src={e.img} alt={e.title} />
+              <img src={e.img}  id={'e' + e.id} alt={e.title} />
               <p>
                 <a rel="noopener noreferrer" target="_blank" href={e.link}>{e.title}</a>
               </p>
