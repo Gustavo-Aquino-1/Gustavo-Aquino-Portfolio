@@ -15,6 +15,7 @@ const HeaderArea = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  /* margin-bottom: 50px; */
 
   a {
     text-decoration: none;
@@ -35,10 +36,10 @@ const HeaderArea = styled.header`
   }
 
   @media(max-width: 600px) {
-    width: 90%;
+    width: 100%;
+    margin: auto; // margin auto corrigiu o erro de estar bugando na outa de trocar de pagina projetos para sobre mim por exemplo!!
     a {
-      font-size: 15px;
-      margin-right: 0;
+      font-size: 16px;
     }
   } 
 `

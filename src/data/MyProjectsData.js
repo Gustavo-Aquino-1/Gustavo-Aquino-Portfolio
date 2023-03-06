@@ -1,4 +1,4 @@
-import todo_img from '../imgs/todo-image.png'
+/* import todo_img from '../imgs/todo-image.png'
 import rick_and_morty_img from '../imgs/rick-and-morty.jpg'
 import TFC from '../imgs/TFC.png'
 import trivia from '../imgs/trivia.jpg'
@@ -30,4 +30,4 @@ const myprojects = [
   },
 ]
 
-export default myprojects;
+export default myprojects; */
