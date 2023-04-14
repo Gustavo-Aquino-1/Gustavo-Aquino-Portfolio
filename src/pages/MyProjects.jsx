@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Header from '../components/Header'
-// import myprojects from '../data/MyProjectsData'
+import myprojects from '../data/MyProjectsData'
 import styled from 'styled-components'
 import PortfolioContext from '../context/PortfolioContext'
 import api from '../api'
@@ -75,8 +75,12 @@ function MyProjects() {
 
   useEffect(() => {
     const get = async () => {
-      const { data } = await api.get('/projects')
-      setResult(data)
+      try {
+        const { data } = await api.get('/projects')
+        setResult(data)
+      } catch (error) {
+        setResult(myprojects);
+      }
     }
     get()
   }, [])

@@ -8,11 +8,12 @@ import { useContext } from 'react'
 import PortfolioContext from '../context/PortfolioContext'
 import api from '../api'
 import { HiComputerDesktop } from 'react-icons/hi2';
+import myStacks from '../data/MyStacks'
 
 
 const AboutMeArea = styled.div`
   min-height: 100vh; // tava fincando branco quando estendia o details pois ela so suportava 100vh e o details extendia a pagina para uns 105vh logo ficava branco, é melhor deixar a height no automatico mesmo!! */
-  height: 100%; */ // em vez de 100vh coloque 100% !!
+  height: 100%; // em vez de 100vh coloque 100% !!
   width: 100%;
   background-color: ${({ colors }) =>
     colors.color}; // simples , quando for chamalo voce passa a props e aqui voce pega como nome que salvou
@@ -126,8 +127,12 @@ function AboutMe() {
 
   useEffect(() => {
     const get = async () => {
-      const { data } = await api.get('/stacks')
-      setStacks(data)
+      try {
+        const { data } = await api.get('/stacks')
+        setStacks(data);
+      } catch (error) {
+        setStacks(myStacks)
+      }
     }
     get()
   })
