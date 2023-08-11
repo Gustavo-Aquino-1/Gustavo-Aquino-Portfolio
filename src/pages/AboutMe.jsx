@@ -7,9 +7,8 @@ import { GiCommercialAirplane } from 'react-icons/gi'
 import { useContext } from 'react'
 import PortfolioContext from '../context/PortfolioContext'
 import api from '../api'
-import { HiComputerDesktop } from 'react-icons/hi2';
+import { HiComputerDesktop } from 'react-icons/hi2'
 import myStacks from '../data/MyStacks'
-
 
 const AboutMeArea = styled.div`
   min-height: 100vh; // tava fincando branco quando estendia o details pois ela so suportava 100vh e o details extendia a pagina para uns 105vh logo ficava branco, é melhor deixar a height no automatico mesmo!! */
@@ -23,7 +22,7 @@ const AboutMeArea = styled.div`
   flex-direction: column;
   /* padding-bottom: 140px; */
 
-   header {
+  header {
     position: fixed;
     top: 0;
   }
@@ -47,17 +46,17 @@ const AboutMeArea = styled.div`
     gap: 20px;
   }
 
-
   #stacks {
-      margin-top: 40px;
-      background-color: ${({ colors }) => colors.color === 'black' ? '#115660' : '#38396f'};
-      width: 100%;
+    margin-top: 40px;
+    background-color: ${({ colors }) =>
+      colors.color === 'black' ? '#115660' : '#38396f'};
+    width: 100%;
+    color: white;
+    h1 {
       color: white;
-      h1 {
-        color: white;
-      }
-      padding-bottom: 100px;
     }
+    padding-bottom: 100px;
+  }
 
   #informacoes {
     /* height: 80%; */
@@ -67,7 +66,7 @@ const AboutMeArea = styled.div`
     color: ${({ colors }) => colors.subColor};
     line-height: 30px;
     font-size: 23px;
-    line-height: 40px ;
+    line-height: 40px;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -87,7 +86,7 @@ const AboutMeArea = styled.div`
     }
 
     margin-bottom: 100px;
-  } 
+  }
 
   #stacks_list {
     padding-top: 50px;
@@ -117,7 +116,6 @@ const AboutMeArea = styled.div`
       font-size: 25px;
       margin-top: 4em;
     }
-
   }
 `
 
@@ -129,7 +127,7 @@ function AboutMe() {
     const get = async () => {
       try {
         const { data } = await api.get('/stacks')
-        setStacks(data);
+        setStacks(data)
       } catch (error) {
         setStacks(myStacks)
       }
@@ -150,12 +148,8 @@ function AboutMe() {
 
         <div id='informacoes'>
           <p>
-            Prazer , Sou o Gustavo Aquino , natural de São Paulo (SP) , tenho 18
-            anos de idade e atualmente sou estudante de desenvolvimento web
-            full-stack na Trybe , sou uma pessoa apaixonada por tecnologia e por
-            coisas futurísticas , sempre tive e sempre terei muita curiosidade
-            para aprender coisas novas e me aventurar no desconhecido, afinal
-            conhecimento é poder!
+            Prazer , Sou o Gustavo Aquino , natural de São Paulo (SP) , tenho 19
+            anos de idade e atualmente sou Desenvolvedor Fullstack!
           </p>
 
           {/* <p>
@@ -211,7 +205,6 @@ function AboutMe() {
               ))}
             </section>
           </div>
-
         </div>
       </AboutMeArea>
     </>
