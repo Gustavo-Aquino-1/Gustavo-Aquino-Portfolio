@@ -39,7 +39,7 @@ function Footer() {
       <a
         target='_blank'
         rel='noreferrer'
-        href='https://www.linkedin.com/in/gustavo-henrique-aquino/'
+        href='https://www.linkedin.com/in/gustavo--aquino/'
       >
         <BsLinkedin id='icon' color={subColor} />
       </a>
